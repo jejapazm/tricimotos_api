@@ -1,0 +1,88 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: ID!
+  username: String!
+  names: String!
+  surnames: String!
+  identification: String!
+  contactNumber: String
+  roles: [String!]!
+  hasAceptedInvitation: Boolean!
+  idDeleted: Boolean!
+  invitationExpirationDate: DateTime!
+  lastUpdateBy: User
+  updateDate: DateTime
+  deletedBy: User
+  deletionDate: DateTime
+  createdBy: User!
+  creationDate: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Carrer {
+  id: ID!
+  passenger: User
+  driver: User
+  creationDate: DateTime!
+}
+
+type Query {
+  users: [User!]!
+  user(id: ID!): User!
+  carrers: [Carrer!]!
+  carrer(id: ID!): Carrer!
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): User!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  removeUser(id: ID!): User!
+  login(loginInput: LoginInput!): User!
+  createCarrer(createCarrerInput: CreateCarrerInput!): Carrer!
+  updateCarrer(updateCarrerInput: UpdateCarrerInput!): Carrer!
+  removeCarrer(id: ID!): Carrer!
+}
+
+input CreateUserInput {
+  username: String!
+  password: String!
+  names: String!
+  surnames: String!
+  identification: String!
+  contactNumber: String!
+  hasAceptedInvitation: Boolean!
+  rol: String!
+}
+
+input UpdateUserInput {
+  username: String
+  password: String
+  names: String
+  surnames: String
+  identification: String
+  contactNumber: String
+  hasAceptedInvitation: Boolean
+  rol: String
+  id: ID!
+}
+
+input LoginInput {
+  username: String!
+  password: String!
+}
+
+input CreateCarrerInput {
+  exampleField: Int!
+}
+
+input UpdateCarrerInput {
+  exampleField: Int
+  id: ID!
+}

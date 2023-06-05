@@ -1,0 +1,27 @@
+version: '3.5'
+
+# services: 
+
+#   analyticsapi:
+#     build: 
+#       context: .
+#       dockerfile: Dockerfile
+#     image: tricimotos_api
+#     container_name: tricimotosApi
+#     restart: always
+#     ports:
+#       - "${PORT}:${PORT}"
+#     environment:
+#       DB_PASSWORD: ${DB_PASSWORD}
+#       DB_NAME: ${DB_NAME}
+#       DB_HOST: ${DB_HOST}
+#       DB_PORT: ${DB_PORT}
+#       DB_USERNAME: ${DB_USERNAME}
+#       JWT_SECRET: ${JWT_SECRET}
+#       PORT: ${PORT}
+
+# networks:
+#     default:
+#         name: tricimotos_services
+
+#         version: '3.5'
